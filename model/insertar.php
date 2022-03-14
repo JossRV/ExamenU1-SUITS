@@ -15,12 +15,6 @@
     $bd=isset($_POST['curbd'])?1:0;
     $antiguedad=$_POST['antiguedad'];
     $bono=0;
-    $durphp=20*3;
-    $durjava=35*3;
-    $durasp=40*3;
-    $durora=60*3;
-    $durvb=55*3;
-    $durbd=15*3;
 
     function obtenerPorciento($sueldoin){
         $sueldoPorciento=$sueldoin*(.15);
@@ -85,11 +79,40 @@
             return $adicion;
         }
     }
-    $sumaAnt=(porSexo($sexo,obtenerPorciento($sueldo),$edad,$nacionalidad))+(antiguedad($antiguedad,obtenerPorciento($sueldo)));
+    $bono=(porSexo($sexo,obtenerPorciento($sueldo),$edad,$nacionalidad))+(antiguedad($antiguedad,obtenerPorciento($sueldo)));
+
+    
+    $durphp=20*3;
+    $durjava=35*3;
+    $durasp=40*3;
+    $durora=60*3;
+    $durvb=55*3;
+    $durbd=15*3;
+
+    if($php==1){
+        $bono= $bono+$durphp;
+    }
+    if($java==1){
+        $bono= $bono+$durjava;
+    }
+    if($asp==1){
+        $bono= $bono+$durasp;
+    }
+    if($oracle==1){
+        $bono= $bono+$durora;
+    }
+    if($vb==1){
+        $bono= $bono+$durvb;
+    }
+    if($bd==1){
+        $bono= $bono+$durbd;
+    }
+        
+
     echo '<br>';
-    echo $sumaAnt;
-    // echo porSexo($sexo,obtenerPorciento($sueldo),$edad,$nacionalidad);
+    // echo $sumaAnt;
     echo '<br>';
+    // echo $bono;
 
     $datos=array(
         $sueldo,
@@ -109,7 +132,7 @@
 
     $m=new metodos();
     if($m->insertarDatos($datos)==1){
-        // header("location: ../index.php");
+        header("location: ../index.php");
     }else{
         echo "no se agrego correctamente";
     }

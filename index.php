@@ -141,12 +141,36 @@
                                 <td><?=$key['sexo']?></td>
                                 <td><?=$key['nacionalidad']?></td>
                                 <td><?=$key['antiguedad']?></td>
-                                <td><?=$key['php']?></td>
-                                <td><?=$key['asp']?></td>
-                                <td><?=$key['vb']?></td>
-                                <td><?=$key['java']?></td>
-                                <td><?=$key['oracle']?></td>
-                                <td><?=$key['bd']?></td>
+                                <td>
+                                    <?php
+                                        echo $key['php']==1 ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-times-circle"></i>';
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php 
+                                        echo $key['asp']==1 ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-times-circle"></i>';
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                        echo $key['vb']==1 ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-times-circle"></i>';
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                        echo $key['java']==1 ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-times-circle"></i>';
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                        echo $key['oracle']==1 ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-times-circle"></i>';
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                        echo $key['bd']==1 ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-times-circle"></i>';
+                                    ?>
+                                </td>
                                 <td><?=$key['bono']?></td>
                             </tr>
                             <?php 
